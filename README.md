@@ -1,19 +1,35 @@
-Data preprocess on dataset(*PESTOPIA*)
-📘 Pestopia Dataset Overview
-Pestopia is a comprehensive dataset designed to support pest detection and pesticide recommendation models in Indian agriculture. It contains:
-- 56,685 high-resolution images of 132 pest species
-- A CSV file listing pesticides used to control each pest
-- Organized into two main folders:
-- Pest_Dataset/: pest images labeled by species
-- Pesticide_Dataset/: metadata including pesticide names, efficacy, and crop associations
-- 
-🎯 Purpose and Use Cases
-- Train machine learning models for pest classification
-- Develop forecasting systems for pest outbreaks
-- Recommend targeted pesticide treatments
-- Support agricultural research and education
+🐛 Pest Image Classification — Supervised Learning Project
+📌 Overview
+This project aims to classify pest species from agricultural images using supervised machine learning models. It supports both traditional ML (SVM with HOG features) and deep learning (CNN) pipelines. The goal is to assist farmers and agronomists in identifying pests and recommending targeted interventions.
 
-🧪 Technical Highlights
-- Images are labeled with pest names for supervised learning
-- Pesticide metadata includes treatment efficacy and crop relevance
-- Suitable for CNNs, transfer learning, and recommendation systems
+🧠 Objectives
+- Build a supervised model to classify pest species from images
+- Compare CNN and SVM performance on the same dataset
+- Enable real-time prediction and evaluation
+- Lay groundwork for pesticide recommendation logic
+
+📁 Dataset
+- Source: Pestopia Dataset on Kaggle
+- Classes: 10–132 pest categories (depending on subset used)
+- Size: ~55,000 images
+- Format: JPEG/PNG images organized by class folders
+
+⚙️ Tech Stack
+- Python 3.11
+- TensorFlow / Keras
+- scikit-learn
+- OpenCV
+- Matplotlib / Seaborn
+- Jupyter Notebook / Kaggle Kernel
+
+🧪 Model Options
+✅ CNN (Deep Learning)
+- Input: Raw images (128×128×3)
+- Architecture: 3 Conv layers + Dense + Dropout
+- Output: Softmax classification
+- Accuracy: ~90% on validation set (varies by subset)
+✅ SVM (Traditional ML)
+- Input: HOG features from grayscale images
+- Kernel: Linear
+- Output: Multiclass classification
+- Accuracy: ~75–85% depending on feature quality
